@@ -1,0 +1,11 @@
+
+BaseballAR/Library/
+BaseballAR/Logs/
+BaseballAR/Temp/
+BaseballAR/UserSettings/
+BaseballAR/obj/
+.vsconfig
+*.csproj
+*.sln
+
+BaseballAR/.vs/
