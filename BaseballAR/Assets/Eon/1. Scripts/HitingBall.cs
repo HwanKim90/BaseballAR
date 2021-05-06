@@ -5,7 +5,7 @@ using UnityEngine;
 public class HitingBall : MonoBehaviour
 {
     public Vector3 fallZone;
-    float x;
+    //float x;
     float z;
     public float DestroySec = 3.0f;
 
@@ -14,12 +14,11 @@ public class HitingBall : MonoBehaviour
         transform.position = new Vector3(-0.14f, 0.75f, -3.56f);
         //x = Random.Range(-8.93f, 8.93f);
         z = Random.Range(5.0f, 16.82f);
-        fallZone = new Vector3(x, 0, z);
+        fallZone = new Vector3(-0.14f, 0, z);
 
         Judge(z);
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position = Vector3.Slerp(transform.position, fallZone, 0.02f);
