@@ -7,6 +7,7 @@ using UnityEngine;
 public class PitchingMachine : MonoBehaviour
 {
     public GameObject pitchingMachine;
+    
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class PitchingMachine : MonoBehaviour
         GameObject ball = Instantiate(pitchingMachine);
         ball.transform.position = transform.position;
     }
+    
 
     public void OnClickExit()
     {

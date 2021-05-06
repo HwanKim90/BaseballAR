@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
-    Vector3 targetZone;
+    public Vector3 targetZone;
     float x;
     float y;
     public float DestroySec = 3.0f;
-    
+
     void Start()
     {
         transform.position = new Vector3(0, 1.5f, 4.71f);
@@ -18,6 +18,7 @@ public class Ball : MonoBehaviour
         targetZone = new Vector3(x, y, -3.63f);
 
         Judge(x, y);
+        
     }
 
     void Update()
