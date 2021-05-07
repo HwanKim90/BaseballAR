@@ -5,18 +5,20 @@ using UnityEngine.UI;
 
 public class CheckZone : MonoBehaviour
 {
-    public Material green;
+    
     
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Ball"))
+        {
+           
+            
+        }
         
-        BallMove ball = other.GetComponent<BallMove>();
-        ball.ballSpeed = 0;
-        
-        if (!ball.isStrike) other.GetComponent<MeshRenderer>().material = green;
     }
 }
+
 
 
         

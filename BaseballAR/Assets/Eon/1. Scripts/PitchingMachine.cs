@@ -7,7 +7,7 @@ using UnityEngine;
 public class PitchingMachine : MonoBehaviour
 {
     public GameObject pitchingMachine;
-    
+    public GameObject strikeZone;
 
     void Start()
     {
@@ -23,6 +23,8 @@ public class PitchingMachine : MonoBehaviour
     {
         GameObject ball = Instantiate(pitchingMachine);
         ball.transform.position = transform.position;
+        strikeZone.SetActive(false);
+        //StrikeZoneHelper.isStrike = false;
     }
     
 

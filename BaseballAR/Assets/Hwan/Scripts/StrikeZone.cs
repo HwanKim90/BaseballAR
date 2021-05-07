@@ -5,21 +5,23 @@ using UnityEngine;
 public class StrikeZone : MonoBehaviour
 {
     public Material yellow;
-
+    
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            gameObject.SetActive(false);
-        }
+        
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.tag);
-        other.GetComponent<MeshRenderer>().material = yellow;
-        other.GetComponent<BallMove>().isStrike = true;
+        //print(other.tag);
+        if (other.CompareTag("Ball"))
+        {
+            StrikeZoneHelper.isStrike = true;
+            other.GetComponent<MeshRenderer>().material = yellow;
+
+        }
+        
         
     }
 
