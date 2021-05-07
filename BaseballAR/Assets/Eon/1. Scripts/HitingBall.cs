@@ -8,15 +8,17 @@ public class HitingBall : MonoBehaviour
     //float x;
     float z;
     public float DestroySec = 3.0f;
+    //float yBall;
 
     void Start()
     {
-        transform.position = new Vector3(-0.14f, 0.75f, -3.56f);
+        transform.position = GameObject.Find("HitingMachine").transform.position;
+        //transform.position = new Vector3(0, 0, 4.5f);
         //x = Random.Range(-8.93f, 8.93f);
-        z = Random.Range(5.0f, 16.82f);
-        fallZone = new Vector3(-0.14f, 0, z);
+        z = Random.Range(20.0f, 28.82f);
+        fallZone = new Vector3(0, 0, z);
 
-        Judge(z);
+        //Judge(z);
     }
 
     void Update()
@@ -25,7 +27,7 @@ public class HitingBall : MonoBehaviour
         print(gameObject.transform.position.y);
         Destroy(gameObject, DestroySec);
     }
-
+/*
     void Judge(float z)
     {
         if (z <= 7.71)
@@ -41,4 +43,5 @@ public class HitingBall : MonoBehaviour
             print("È¨·±! : 200Á¡");
         }
     }
+*/
 }
