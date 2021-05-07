@@ -21,8 +21,9 @@ public class StrikeZone : MonoBehaviour
         other.GetComponent<MeshRenderer>().material = yellow;
         other.GetComponent<BallMove>().isStrike = true;
         
-
     }
+
+
 
    
 
