@@ -23,8 +23,9 @@ public class HitingBall : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Slerp(transform.position, fallZone, 0.02f);
-        print(gameObject.transform.position.y);
+        
+
+        //   transform.position = Vector3.Slerp(transform.position, fallZone, 0.02f);
         Destroy(gameObject, DestroySec);
     }
 /*
