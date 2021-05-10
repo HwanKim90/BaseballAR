@@ -17,7 +17,7 @@ public class StrikeZoneHelper : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             isStrike = false;
-            print("helper충돌");
+            //print("helper충돌");
             strikeZone.SetActive(true);
             ballCnt++;
             other.GetComponentInChildren<Text>().text = ballCnt.ToString();
