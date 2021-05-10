@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class StrikeZoneHelper : MonoBehaviour
 {
     public GameObject strikeZone;
+    
     public Material green;
+    
+
     public static bool isStrike;
     int ballCnt;
+    
+
     
 
     private void OnTriggerEnter(Collider other)
@@ -24,6 +29,7 @@ public class StrikeZoneHelper : MonoBehaviour
             if (isStrike == false) other.GetComponent<MeshRenderer>().material = green;
 
         }
-        
     }
+     
+    
 }
