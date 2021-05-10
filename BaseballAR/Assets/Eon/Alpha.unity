@@ -1386,11 +1386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5d5db41bd96254a9c5d2db2e2628a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {x: 0, y: 0, z: 0}
-  firingAngle: 0
-  gravity: 9.8
-  Projectile: {fileID: 0}
-  myTransform: {fileID: 0}
 --- !u!4 &1162783928
 Transform:
   m_ObjectHideFlags: 0
