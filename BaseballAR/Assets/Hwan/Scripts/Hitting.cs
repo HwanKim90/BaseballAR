@@ -27,18 +27,30 @@ public class Hitting : MonoBehaviour
 
     void Update()
     {
-        // 임시 Box Collider false;
-        if (Input.GetMouseButtonDown(0))
-        {
-            bc.enabled = false;
-        }
+        //// 임시 Box Collider false;
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    bc.enabled = false;
+        //}
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            bc.enabled = true;
-            //Swing(-1000, 1000, 700);
-            StartCoroutine(SwingTiming());
-        }
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    bc.enabled = true;
+        //    //Swing(-1000, 1000, 700);
+        //    StartCoroutine(SwingTiming());
+        //}
+    }
+
+    public void OnClickSwing()
+    {
+        bc.enabled = true;
+        
+        StartCoroutine(SwingTiming());
+    }
+
+    public void OnClickDefault()
+    {
+        bc.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
