@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitingMachine : MonoBehaviour
 {
-    int throwPower = 750;
+    //int throwPower = 750;
     public GameObject hitingMachine;
 
     void Start()

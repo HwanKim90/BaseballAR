@@ -247,11 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d54eb0a5ab1f5c4eb2e2d586ca11e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: 656686364}
-  center: {fileID: 1706689650}
-  right: {fileID: 656469322}
   hitBall: {fileID: 8909137872786375704, guid: b81a174fcfd42364d80f1f63cfefabfe, type: 3}
-  hitPower: 1000
+  hitPower: 700
 --- !u!4 &317752524
 Transform:
   m_ObjectHideFlags: 0
@@ -278,7 +275,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 549203130}
-  - component: {fileID: 549203129}
   m_Layer: 0
   m_Name: DetectTarget
   m_TagString: Untagged
@@ -286,20 +282,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &549203129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549203128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adf535167a670b64eb2b11fbf0a1535f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 6813049487448646959, guid: 688cd614f38159541a4688af871c240d, type: 3}
-  distance: 0
 --- !u!4 &549203130
 Transform:
   m_ObjectHideFlags: 0

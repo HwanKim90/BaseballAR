@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class StrikeZoneHelper : MonoBehaviour
 {
-    public GameObject strikeZone;
     
+    public GameObject strikeZone;
     public Material green;
     
 
@@ -22,7 +22,7 @@ public class StrikeZoneHelper : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             isStrike = false;
-            print("helper√Êµπ");
+            Hitting.stayTime = 0;
             strikeZone.SetActive(true);
             ballCnt++;
             other.GetComponentInChildren<Text>().text = ballCnt.ToString();

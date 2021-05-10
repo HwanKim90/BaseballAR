@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5357188230595799112}
   - component: {fileID: 7464067728241331484}
   - component: {fileID: 9217988332382763665}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

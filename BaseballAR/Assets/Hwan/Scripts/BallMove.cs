@@ -10,6 +10,7 @@ public class BallMove : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * ballSpeed * Time.deltaTime, Space.Self);
+        Destroy(gameObject, 2f);
     }
 
     

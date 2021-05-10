@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6033210496874822942}
   - component: {fileID: 5994970918030913711}
   - component: {fileID: 692323752030401960}
-  - component: {fileID: 970013799195178400}
   m_Layer: 6
   m_Name: BallKH
   m_TagString: Ball
@@ -127,20 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f78d69ddd48ccdb4cabf45468297bf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: 20
---- !u!114 &970013799195178400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1020430199672898752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e2b99eafa8a020429eac0c108c04adb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObj: {fileID: 0}
+  ballSpeed: 15
 --- !u!1 &3001090239399179376
 GameObject:
   m_ObjectHideFlags: 0
