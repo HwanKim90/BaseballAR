@@ -12,7 +12,7 @@ public class Hitting : MonoBehaviour
     public static Hitting instance;
     public GameObject hitBall;
     
-    float power = 300;
+    float power = 100;
     BoxCollider bc;
     
     private void Awake()
@@ -45,14 +45,20 @@ public class Hitting : MonoBehaviour
     {
         bc.enabled = true;
         
-        StartCoroutine(SwingTiming());
+        if (StrikeZoneHelper.isStrike)
+        {
+            print("스트라이크존통과" + bc.enabled);
+            StartCoroutine(SwingTiming());
+        }
+        else
+        {
+            bc.enabled = false;
+            print("볼" + bc.enabled);
+        }
+
     }
 
-    public void OnClickDefault()
-    {
-        bc.enabled = false;
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
@@ -67,16 +73,16 @@ public class Hitting : MonoBehaviour
 
     IEnumerator SwingTiming()
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.13f);
         Swing(xHitPower, yHitPower, zHitPower);
     }
 
     public void Swing(float xHitPower, float yHitPower, float zHitPower)
     {
         GameObject hit = Instantiate(hitBall);
-        
-
         hit.transform.position = transform.position;
+        if (xHitPower == 0 && yHitPower == 0 && zHitPower == 0) Destroy(hit);
+
         Rigidbody rb = hit.GetComponent<Rigidbody>();
         
         rb.AddRelativeForce(new Vector3(xHitPower, yHitPower, zHitPower));

@@ -20,7 +20,7 @@ public class TestCurve : MonoBehaviour
     {
         float x = Random.Range(-0.4f, 0.4f);
         float y = Random.Range(-0.5f, 0.5f);
-        firingAngle = Random.Range(0.0f, 15.0f);
+        firingAngle = Random.Range(1.2f, 15.0f);
 
         Target = new Vector3(x, y, 2.94f);
 
@@ -56,6 +56,6 @@ public class TestCurve : MonoBehaviour
             yield return null;
         }
 
-        Destroy(gameObject, 3.5f);
+        //Destroy(gameObject, 3.5f);
     }
 }
