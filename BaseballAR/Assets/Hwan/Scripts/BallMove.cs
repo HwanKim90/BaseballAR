@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BallMove : MonoBehaviour
 {
-
-    //public float ballSpeed = 10;
-    public bool isStrike;
+    public float ballSpeed = 10;
+    //public bool isStrike;
 
     void Update()
     {
-        //transform.Translate(Vector3.forward * ballSpeed * Time.deltaTime, Space.Self);
+        transform.Translate(Vector3.forward * ballSpeed * Time.deltaTime, Space.Self);
     }
+
+    
 }
