@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 1934207597404193825}
   - component: {fileID: 1074324090329503315}
   - component: {fileID: 1231269119331396690}
-  - component: {fileID: 2234144518715534791}
+  - component: {fileID: 3849604349705136556}
   - component: {fileID: 2026274317543760252}
   m_Layer: 6
   m_Name: Ball
@@ -492,7 +492,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2234144518715534791
+--- !u!114 &3849604349705136556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,10 +501,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6978831110063597845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de1d366357cf1944b065552700bca43, type: 3}
+  m_Script: {fileID: 11500000, guid: 0caf3bb89bea87a49a3e4305508f6c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetZone: {x: 0, y: 0, z: 0}
+  Target: {x: 0, y: 0, z: 0}
+  firingAngle: 0
+  gravity: 9.8
+  Projectile: {fileID: 6794038527866280461}
 --- !u!54 &2026274317543760252
 Rigidbody:
   m_ObjectHideFlags: 0
