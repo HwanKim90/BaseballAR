@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 3322981576987606579}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1.5, z: 4.71}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 6476435194243420678}
   - {fileID: 847148947797791500}
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0caf3bb89bea87a49a3e4305508f6c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 2710367396827498344, guid: 95b1c216905758f4c9b1b5406780486b, type: 3}
+  Target: {fileID: 0}
   firingAngle: 0
   gravity: 9.8
   Projectile: {fileID: 1192633405037333803}
@@ -385,7 +385,7 @@ TrailRenderer:
   m_Time: 2
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.2
+    widthMultiplier: 0.05
     widthCurve:
       serializedVersion: 2
       m_Curve:

@@ -12,7 +12,7 @@ public class Hitting : MonoBehaviour
     public static Hitting instance;
     public GameObject hitBall;
     
-    float power = 100;
+    float power = 10;
     BoxCollider bc;
     
     private void Awake()

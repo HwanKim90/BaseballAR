@@ -14,7 +14,7 @@ public class ARManager : MonoBehaviour
     public GameObject indicator;
     public GameObject stadium;
     public GameObject ui;
-    public GameObject zone;
+    //public GameObject zone;
 
     ARRaycastManager rayManager;
     // Start is called before the first frame update
@@ -70,9 +70,9 @@ public class ARManager : MonoBehaviour
                 stadium.transform.position = indicator.transform.position;
                 stadium.transform.rotation = indicator.transform.rotation;
 
-                zone.SetActive(true);
-                zone.transform.position = indicator.transform.position - new Vector3(0, -0.1f, 1.8f);
-                zone.transform.rotation = indicator.transform.rotation;
+                //zone.SetActive(true);
+                //zone.transform.position = indicator.transform.position - new Vector3(0, -0.1f, 1.8f);
+                //zone.transform.rotation = indicator.transform.rotation;
 
                 ui.SetActive(true);
                 indicator.SetActive(false);
