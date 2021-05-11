@@ -5,21 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Eon/PitchingScene.unity
-    guid: 503a07cc24060de49887b3899504c074
-  - enabled: 0
-    path: Assets/Hwan/Scenes/Prototype.unity
-    guid: e6874d103467fc6459d4646c848ab9ee
-  - enabled: 0
-    path: Assets/Hwan/Scenes/AlphaType.unity
-    guid: e4a3492afe8b97f40ab132c9ce851394
-  - enabled: 0
-    path: Assets/Eon/PrototypeTest 1.unity
-    guid: 79b8c7361b203fd49a3f22ee61fd5330
   - enabled: 1
-    path: Assets/Hwan/Scenes/AlphaKH.unity
-    guid: 6026fdd05bc40354d8bb506d089d7a80
+    path: Assets/Eon/Alpha1.unity
+    guid: ddc815030b2cad64988e31e507ead2dd
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6a2e43d5ef7cf1e43966d55562d64084, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c51eb0564f2cd324fa54611cab902247, type: 2}

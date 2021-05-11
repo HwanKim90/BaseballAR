@@ -24,7 +24,7 @@ public class PitchingMachine : MonoBehaviour
     {
         GameObject ball = Instantiate(pitchingMachine);
         ball.transform.position = transform.position;
-        strikeZone.SetActive(false);
+        strikeZone.SetActive(false);    
         //StrikeZoneHelper.isStrike = false;
     }
 /*

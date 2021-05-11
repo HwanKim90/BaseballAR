@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class TestCurve : MonoBehaviour
 {
-    public Vector3 Target;
+    public GameObject Target;
     public float firingAngle;
     public float gravity = 9.8f;
 
     public Transform Projectile;
     private Transform myTransform;
+
+    Vector3 isTarget;
 
     private void Awake()
     {
@@ -18,23 +20,18 @@ public class TestCurve : MonoBehaviour
 
     void Start()
     {
-        float x = Random.Range(-0.4f, 0.4f);
-        float y = Random.Range(-0.5f, 0.5f);
-        firingAngle = Random.Range(1.2f, 15.0f);
-
-        Target = new Vector3(x, y, 2.94f);
-
+        firingAngle = Random.Range(15.0f, 45.0f);
+        isTarget = Target.transform.position - new Vector3(0.2f, 0, 0);
         StartCoroutine(SimulateProjectile());
     }
 
-    // Update is called once per frame
+
     IEnumerator SimulateProjectile()
     {
-        //yield return new WaitForSeconds(1.5f);
 
         Projectile.position = myTransform.position + new Vector3(0, 0.0f, 0);
 
-        float target_Distance = Vector3.Distance(Projectile.position, Target);
+        float target_Distance = Vector3.Distance(Projectile.position, isTarget);
 
         float projectile_Velocity = target_Distance / (Mathf.Sin(2 * firingAngle * Mathf.Deg2Rad) / gravity);
 
@@ -43,7 +40,7 @@ public class TestCurve : MonoBehaviour
 
         float flightDuration = target_Distance / Vx;
 
-        Projectile.rotation = Quaternion.LookRotation(Target - Projectile.position);
+        Projectile.rotation = Quaternion.LookRotation(isTarget - Projectile.position);
 
         float elapse_time = 0;
 
@@ -56,6 +53,5 @@ public class TestCurve : MonoBehaviour
             yield return null;
         }
 
-        //Destroy(gameObject, 3.5f);
     }
 }
