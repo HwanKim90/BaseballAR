@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PitchingMachine : MonoBehaviour
 {
-    public GameObject pitchingMachine;
+    public GameObject [] pitchingMachine;
     //public GameObject pitchingMachine1;
     public GameObject strikeZone;
 
@@ -22,8 +22,21 @@ public class PitchingMachine : MonoBehaviour
     }
     public void OnClickThrow()
     {
-        GameObject ball = Instantiate(pitchingMachine);
-        ball.transform.position = transform.position;
+        int count = Random.Range(0,2);
+
+        if(count == 0)
+        {
+            GameObject ball = Instantiate(pitchingMachine[0]);
+            ball.transform.position = transform.position;
+        }
+        
+
+        if(count == 1)
+        {
+            GameObject ball = Instantiate(pitchingMachine[1]);
+            ball.transform.position = transform.position;
+        }
+
         strikeZone.SetActive(false);    
         //StrikeZoneHelper.isStrike = false;
     }
