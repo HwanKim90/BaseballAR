@@ -13,6 +13,8 @@ public class TestCurve : MonoBehaviour
 
     Vector3 isTarget;
 
+    int targetNum;
+
     private void Awake()
     {
         myTransform = transform;
@@ -20,7 +22,9 @@ public class TestCurve : MonoBehaviour
 
     void Start()
     {
-        Target = GameObject.Find("TargetTest");
+        targetNum = Random.Range(0, 5);
+
+        Target = GameObject.Find("Target/TargetTest" + targetNum);
 
         firingAngle = Random.Range(15.0f, 30.0f);
         isTarget = Target.transform.position; //- new Vector3(0.2f, 0, 0);

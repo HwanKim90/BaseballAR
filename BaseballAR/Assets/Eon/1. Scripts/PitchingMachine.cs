@@ -10,6 +10,8 @@ public class PitchingMachine : MonoBehaviour
     
     public GameObject strikeZone;
 
+    int count;
+
     void Start()
     {
         
@@ -28,16 +30,25 @@ public class PitchingMachine : MonoBehaviour
 
     void Throw()
     {
+        count = Random.Range(0, 3);
+
+        if(count == 0)
+        {
             GameObject ball = Instantiate(pitchingMachine[0]);
             ball.transform.position = transform.position;
-            strikeZone.SetActive(false);
-        /*
+        }
         if (count == 1)
         {
             GameObject ball = Instantiate(pitchingMachine[1]);
             ball.transform.position = transform.position;
         }
-        */
+        if (count == 2)
+        {
+            GameObject ball = Instantiate(pitchingMachine[2]);
+            ball.transform.position = transform.position;
+        }
+        strikeZone.SetActive(false);
+
         //StrikeZoneHelper.isStrike = false;
     }
     /*

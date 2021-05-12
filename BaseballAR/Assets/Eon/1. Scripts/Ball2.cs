@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CurveBall : MonoBehaviour
+public class Ball2 : MonoBehaviour
 {
     public GameObject Target;
 
@@ -18,6 +18,6 @@ public class CurveBall : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, Target.transform.position, 0.1f);
+        transform.position = Vector3.Slerp(transform.position, Target.transform.position, 0.1f);
     }
 }
