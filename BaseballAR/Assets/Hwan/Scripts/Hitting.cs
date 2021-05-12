@@ -12,7 +12,7 @@ public class Hitting : MonoBehaviour
     public static Hitting instance;
     public GameObject hitBall;
     
-    float power = 10;
+    float power = 7;
     BoxCollider bc;
     
     private void Awake()
@@ -73,7 +73,7 @@ public class Hitting : MonoBehaviour
 
     IEnumerator SwingTiming()
     {
-        yield return new WaitForSeconds(0.13f);
+        yield return new WaitForSeconds(0.5f);
         Swing(xHitPower, yHitPower, zHitPower);
     }
 

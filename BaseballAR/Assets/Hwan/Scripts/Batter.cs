@@ -10,7 +10,7 @@ public class Batter : MonoBehaviour
         Swing
     }
 
-    public float swingDelay = 1f;
+    public float swingDelay = 0.5f;
     float currTime;
     BatterState state;
     Animator anim;
