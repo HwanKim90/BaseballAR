@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class HitingMachine : MonoBehaviour
 {
-    //int throwPower = 750;
     public GameObject hitingMachine;
+    float currTime = 0;
+    float delayTime = 1.3f;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class HitingMachine : MonoBehaviour
     }
     public void OnClickHit()
     {
+        
         GameObject hitBall = Instantiate(hitingMachine);
         hitBall.transform.position = transform.position;
 //        Rigidbody rb = hitBall.GetComponent<Rigidbody>();

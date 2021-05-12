@@ -30,7 +30,6 @@ public class TestCurve : MonoBehaviour
 
     IEnumerator SimulateProjectile()
     {
-
         Projectile.position = myTransform.position + new Vector3(0, 0.0f, 0);
 
         float target_Distance = Vector3.Distance(Projectile.position, isTarget);

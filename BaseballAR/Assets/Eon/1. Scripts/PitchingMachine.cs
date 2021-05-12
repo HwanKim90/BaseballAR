@@ -7,7 +7,7 @@ using UnityEngine;
 public class PitchingMachine : MonoBehaviour
 {
     public GameObject [] pitchingMachine;
-    //public GameObject pitchingMachine1;
+    
     public GameObject strikeZone;
 
     void Start()
@@ -20,35 +20,35 @@ public class PitchingMachine : MonoBehaviour
     {
 
     }
+
     public void OnClickThrow()
     {
-        int count = Random.Range(0,2);
+        Invoke("Throw", 0.9f);
+    }
 
-        if(count == 0)
-        {
+    void Throw()
+    {
             GameObject ball = Instantiate(pitchingMachine[0]);
             ball.transform.position = transform.position;
-        }
-        
-
-        if(count == 1)
+            strikeZone.SetActive(false);
+        /*
+        if (count == 1)
         {
             GameObject ball = Instantiate(pitchingMachine[1]);
             ball.transform.position = transform.position;
         }
-
-        strikeZone.SetActive(false);    
+        */
         //StrikeZoneHelper.isStrike = false;
     }
-/*
-    public void OnClickThrowCurve()
-    {
-        GameObject ball = Instantiate(pitchingMachine1);
-        ball.transform.position = transform.position;
-        strikeZone.SetActive(false);
-        //StrikeZoneHelper.isStrike = false;
-    }
-*/
+    /*
+        public void OnClickThrowCurve()
+        {
+            GameObject ball = Instantiate(pitchingMachine1);
+            ball.transform.position = transform.position;
+            strikeZone.SetActive(false);
+            //StrikeZoneHelper.isStrike = false;
+        }
+    */
 
     public void OnClickExit()
     {
