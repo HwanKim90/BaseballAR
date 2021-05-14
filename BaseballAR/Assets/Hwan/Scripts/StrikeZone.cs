@@ -13,6 +13,7 @@ public class StrikeZone : MonoBehaviour
 //            print("스트라이크 충돌!!");
             StrikeZoneHelper.isStrike = true;
             other.GetComponent<MeshRenderer>().material = yellow;
+            
         }
     }
 }

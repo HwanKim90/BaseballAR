@@ -12,7 +12,7 @@ public class Hitting : MonoBehaviour
     public static Hitting instance;
     public GameObject hitBall;
     
-    float power = 7;
+    float power = 0.01f;
     BoxCollider bc;
     
     private void Awake()
@@ -113,11 +113,11 @@ public class Hitting : MonoBehaviour
         Vector3 yPos = other.GetComponent<Transform>().transform.position;
         if (yPos.y <= 0.15 && yPos.y >= -0.15)
         {
-            yHitPower = power * 4;
+            yHitPower = power * 0.2f;
         }
         else
         {
-            yHitPower *= yPos.y * 10.5f;
+            yHitPower *= yPos.y * 0.15f;
 
         }
         return Mathf.Abs(yHitPower);
@@ -127,7 +127,7 @@ public class Hitting : MonoBehaviour
     {
         float zHitPower = power;
         Vector3 zPos = other.GetComponent<Transform>().transform.position;
-        zHitPower *= zPos.z;
+        zHitPower *= zPos.z * 0.01f;
         return zHitPower;
     }
 
