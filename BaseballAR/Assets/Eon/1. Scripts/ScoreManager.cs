@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     public void AddScore(int score)
-    {
+    {   
         scoreTotal += score;
         scoreUI.text = "" + scoreTotal;
     }

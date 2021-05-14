@@ -6,11 +6,11 @@ public class ArrowBonusScore : MonoBehaviour
 {
     public static ArrowBonusScore instance;
 
-    public static int bonusScore;
+    int bonusScore = 100;
     public GameObject[] arrows;
 
     int randomNum;
-    bool isCorrect;
+    public static bool isCorrect;
 
     void Awake()
     {
@@ -81,7 +81,7 @@ public class ArrowBonusScore : MonoBehaviour
    void Setting()
     {
         arrows[randomNum].SetActive(false);
-        bonusScore += 100;
+        ScoreManager.instance.AddScore(bonusScore);
         randomNum = Random.Range(0, 3);
         isCorrect = true;
         print(bonusScore);
