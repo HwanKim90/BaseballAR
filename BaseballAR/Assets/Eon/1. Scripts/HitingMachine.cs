@@ -8,7 +8,7 @@ public class HitingMachine : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -18,10 +18,7 @@ public class HitingMachine : MonoBehaviour
     }
     public void OnClickHit()
     {
-        
         GameObject hitBall = Instantiate(hitingMachine);
         hitBall.transform.position = transform.position;
-//        Rigidbody rb = hitBall.GetComponent<Rigidbody>();
-//        rb.AddForce(hitingMachine.transform.forward * throwPower);
     }
 }

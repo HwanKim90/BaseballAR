@@ -5,15 +5,24 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    
+    public Text scoreUI;
+    int scoreTotal;
+
+    public static ScoreManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
         
     }
 
-    void Update()
+    public void AddScore(int score)
     {
-        
+        scoreTotal += score;
+        scoreUI.text = "" + scoreTotal;
     }
 }
