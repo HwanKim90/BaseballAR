@@ -29,6 +29,8 @@ public class Pitcher : MonoBehaviour
 
     int count;
 
+    public float scaleOfTime = 1f;
+
     private Transform myTransform;
 
     void Start()
@@ -53,6 +55,12 @@ public class Pitcher : MonoBehaviour
                     break;
             }
         }
+        if(nowTime > 20.0f)
+        {
+            Time.timeScale = scaleOfTime + (nowTime / 60.0f);
+        }
+        
+        
     }
 
     void Idle()
