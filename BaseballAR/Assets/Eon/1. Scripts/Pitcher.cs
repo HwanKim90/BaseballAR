@@ -12,56 +12,106 @@ public class Pitcher : MonoBehaviour
 
     PitcherState state;
 
-    Transform player;
-
     Animator anim;
 
     public GameObject pitching;
     public GameObject ballFactory;
+    public GameObject[] pitchingMachine;
+    public GameObject strikeZone;
 
     bool isPitching;
 
-    // Start is called before the first frame update
+    float currTime;
+    float pitchTime = 2.0f;
+
+    float nowTime;
+    float gameTime = 60.0f;
+
+    int count;
+
+    private Transform myTransform;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        myTransform = transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        switch (state)
+        nowTime += Time.deltaTime;
+
+        if(nowTime < gameTime)
         {
-            case PitcherState.Idle:
-                Idle();
-                break;
-            case PitcherState.Pitch:
-                Pitch();
-                break;
+            switch (state)
+            {
+                case PitcherState.Idle:
+                    Idle();
+                    break;
+                case PitcherState.Pitch:
+                    Pitch();
+                    break;
+            }
         }
-    }
-    public void OnClickPitch()
-    {
-        isPitching = true;
     }
 
     void Idle()
     {
-        if(isPitching == true)
+        PitcherRot();
+
+        currTime += Time.deltaTime;
+
+        if(currTime > pitchTime)
         {
             state = PitcherState.Pitch;
-            print("상태전환 : Idle -> Pitch");
             anim.SetTrigger("Pitch");
+            currTime = 0;
+            isPitching = true;
         }
     }
 
-    
-
     void Pitch()
     {
-        state = PitcherState.Idle;
-        anim.SetTrigger("Idle");
-        isPitching = false;
+        Invoke("Throw", 0.9f);
 
+        currTime += Time.deltaTime;
+
+        if (currTime > pitchTime)
+        {
+            state = PitcherState.Idle;
+            anim.SetTrigger("Idle");
+            currTime = 0;
+        }
+    }
+
+    void PitcherRot()
+    {
+        transform.rotation = Quaternion.Euler(0, 270, 0);
+    }
+
+    void Throw()
+    {
+        count = Random.Range(0, 3);
+
+        if(isPitching == true)
+        {
+            if (count == 0)
+            {
+                GameObject ball = Instantiate(pitchingMachine[0]);
+                ball.transform.position = ballFactory.transform.position;
+            }
+            if (count == 1)
+            {
+                GameObject ball = Instantiate(pitchingMachine[1]);
+                ball.transform.position = ballFactory.transform.position;
+            }
+            if (count == 2)
+            {
+                GameObject ball = Instantiate(pitchingMachine[2]);
+                ball.transform.position = ballFactory.transform.position;
+            }
+            strikeZone.SetActive(false);
+            isPitching = false;
+        }
     }
 }

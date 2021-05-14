@@ -5,8 +5,6 @@ using UnityEngine;
 public class HitingMachine : MonoBehaviour
 {
     public GameObject hitingMachine;
-    float currTime = 0;
-    float delayTime = 1.3f;
 
     void Start()
     {
