@@ -88,7 +88,7 @@ public class Pitcher : MonoBehaviour
         {
             state = PitcherState.Idle;
             anim.SetTrigger("Idle");
-            ScoreManager.instance.AddScore(10);
+            //ScoreManager.instance.AddScore(10);
             currTime = 0;
         }
     }

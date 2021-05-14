@@ -46,9 +46,9 @@ public class HittingRandom : MonoBehaviour
 
     void SetHitPower()
     {
-        xHitPower = Random.Range(-300f, 300f);
-        yHitPower = Random.Range(150f, 250f);
-        zHitPower = Random.Range(200f, 400f);
+        xHitPower = Random.Range(-200f, 200f);
+        yHitPower = Random.Range(200f, 250f);
+        zHitPower = Random.Range(200f, 250f);
     }
 
     void DefaultHitPower()
@@ -61,11 +61,12 @@ public class HittingRandom : MonoBehaviour
     void Shoot()
     {
         GameObject hitBall = Instantiate(hitBalls);
+        ScoreManager.instance.AddScore(10);
         hitBall.transform.SetPositionAndRotation(hitPos.transform.position, hitPos.transform.rotation);
         Rigidbody rb = hitBall.GetComponent<Rigidbody>();
         rb.AddRelativeForce(xHitPower, yHitPower, zHitPower, ForceMode.Force);
         
-        if (xHitPower == 0 && yHitPower == 0 && zHitPower == 0) Destroy(hitBall);
+        if (xHitPower == 0 && yHitPower == 0 && zHitPower == 0) Destroy(gameObject);
         
     }
 }
