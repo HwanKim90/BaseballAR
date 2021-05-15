@@ -14,12 +14,23 @@ public class ColFive : MonoBehaviour
         
     }
 
+    /*
     private void OnCollisionEnter(Collision other)
     {
         if(other.transform.tag == "Ball")
         {
             ScoreManager.instance.AddScore(5);
             Destroy(other.gameObject);
+        }
+    }
+    */
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.tag == "Ball")
+        {
+            ScoreManager.instance.AddScore(5);
+            Destroy(other.gameObject, 1f);
         }
     }
 }

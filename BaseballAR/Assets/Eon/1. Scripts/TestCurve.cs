@@ -27,7 +27,7 @@ public class TestCurve : MonoBehaviour
         Target = GameObject.Find("Target/TargetTest" + targetNum);
 
         firingAngle = Random.Range(15.0f, 30.0f);
-        isTarget = Target.transform.position; //- new Vector3(0.2f, 0, 0);
+        isTarget = Target.transform.position;
         StartCoroutine(SimulateProjectile());
     }
 

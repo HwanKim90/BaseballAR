@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public Slider slTime;
+    Slider slTime;
 
     void Start()
     {
@@ -14,6 +14,11 @@ public class Timer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        Invoke("CountTime", 20);
+    }
+
+    void CountTime()
     {
         if (slTime.value > 0.0f)
         {

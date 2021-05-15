@@ -7,7 +7,6 @@ public class HittingRandom : MonoBehaviour
     public GameObject hitBalls;
     public GameObject hitPos;
 
-    
     public static float xHitPower;
     public float yHitPower;
     public float zHitPower;
@@ -61,7 +60,7 @@ public class HittingRandom : MonoBehaviour
     void Shoot()
     {
         GameObject hitBall = Instantiate(hitBalls);
-        ScoreManager.instance.AddScore(10);
+        //ScoreManager.instance.AddScore(10);
         hitBall.transform.SetPositionAndRotation(hitPos.transform.position, hitPos.transform.rotation);
         Rigidbody rb = hitBall.GetComponent<Rigidbody>();
         rb.AddRelativeForce(xHitPower, yHitPower, zHitPower, ForceMode.Force);

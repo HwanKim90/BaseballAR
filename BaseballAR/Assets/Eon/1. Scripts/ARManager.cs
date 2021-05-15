@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.UI;
 
 public class ARManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class ARManager : MonoBehaviour
     public GameObject stadium;
     public GameObject ui;
     //public GameObject zone;
+
+    public GameObject countDown;
 
     ARRaycastManager rayManager;
     // Start is called before the first frame update
@@ -70,12 +73,15 @@ public class ARManager : MonoBehaviour
                 stadium.transform.position = indicator.transform.position;
                 stadium.transform.rotation = indicator.transform.rotation;
 
+                countDown.SetActive(true);
+
                 //zone.SetActive(true);
                 //zone.transform.position = indicator.transform.position - new Vector3(0, -0.1f, 1.8f);
                 //zone.transform.rotation = indicator.transform.rotation;
 
                 ui.SetActive(true);
                 indicator.SetActive(false);
+                Invoke("CountDown", 20);
                 enabled = false;
             }
         }
@@ -90,4 +96,9 @@ public class ARManager : MonoBehaviour
         indicator.transform.eulerAngles = new Vector3(0, Camera.main.transform.eulerAngles.y, 0);
             
      }
+
+    void CountDown()
+    {
+        countDown.SetActive(false);
+    }
 }

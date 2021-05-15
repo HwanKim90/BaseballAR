@@ -25,7 +25,7 @@ public class Pitcher : MonoBehaviour
     float pitchTime = 2.0f;
 
     float nowTime;
-    float gameTime = 60.0f;
+    float gameTime = 80.0f;
 
     int count;
 
@@ -43,7 +43,7 @@ public class Pitcher : MonoBehaviour
     {
         nowTime += Time.deltaTime;
 
-        if(nowTime < gameTime)
+        if(nowTime > 20 && nowTime < gameTime)
         {
             switch (state)
             {
@@ -55,9 +55,10 @@ public class Pitcher : MonoBehaviour
                     break;
             }
         }
-        if(nowTime > 20.0f)
+
+        if(nowTime > 40.0f)
         {
-            Time.timeScale = scaleOfTime + (nowTime / 60.0f);
+            Time.timeScale = scaleOfTime + (nowTime / 80.0f);
         }
         
         
