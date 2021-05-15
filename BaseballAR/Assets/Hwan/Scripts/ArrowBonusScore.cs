@@ -84,7 +84,6 @@ public class ArrowBonusScore : MonoBehaviour
         ScoreManager.instance.AddScore(bonusScore);
         randomNum = Random.Range(0, 3);
         isCorrect = true;
-        print(bonusScore);
     }
 }
 

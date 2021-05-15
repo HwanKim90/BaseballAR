@@ -24,9 +24,5 @@ public class Timer : MonoBehaviour
         {
             slTime.value -= Time.deltaTime;
         }
-        else
-        {
-            print("Time is Out");
-        }
     }
 }
