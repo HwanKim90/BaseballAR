@@ -27,7 +27,7 @@ public class ColFive : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "Ball")
+        if(other.transform.tag == "HitBall")
         {
             ScoreManager.instance.AddScore(5);
             Destroy(other.gameObject, 1f);

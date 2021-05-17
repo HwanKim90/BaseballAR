@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Eon/Alpha.unity
     guid: 448f15b837a74c14bb9cb6fbf9464d81
-  - enabled: 1
+  - enabled: 0
     path: Assets/Eon/StartScene.unity
     guid: 33d131dafbd57384daceff4586cd771d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Eon/Eon_ALPHA.unity
     guid: 50614065a6c12ab4f94ef5ce31b694ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Eon/EndScene.unity
     guid: 6433943a119d76b429cc7a6057ef0c1e
+  - enabled: 1
+    path: Assets/Hwan/Scenes/KH_ALPHA.unity
+    guid: 79cbff62353c68449918db529d97f430
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6a2e43d5ef7cf1e43966d55562d64084, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c51eb0564f2cd324fa54611cab902247, type: 2}

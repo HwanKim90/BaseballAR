@@ -68,7 +68,7 @@ public class HittingRandom : MonoBehaviour
         Rigidbody rb = hitBall.GetComponent<Rigidbody>();
         rb.AddRelativeForce(xHitPower, yHitPower, zHitPower, ForceMode.Force);
         
-        if (xHitPower == 0 && yHitPower == 0 && zHitPower == 0) Destroy(gameObject);
+        if (xHitPower == 0 && yHitPower == 0 && zHitPower == 0) Destroy(hitBall);
         
     }
 }

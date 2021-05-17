@@ -17,7 +17,7 @@ public class ColTenDouble : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.transform.tag == "Ball")
+        if (other.transform.tag == "HitBall")
         {
             ScoreManager.instance.AddScore(20);
             Destroy(other.gameObject);
