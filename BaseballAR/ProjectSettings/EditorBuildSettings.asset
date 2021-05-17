@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Eon/StartScene.unity
     guid: 33d131dafbd57384daceff4586cd771d
   - enabled: 0
-    path: Assets/Eon/Eon_ALPHA.unity
+    path: Assets/Eon/Eon.unity
     guid: 50614065a6c12ab4f94ef5ce31b694ce
   - enabled: 0
     path: Assets/Eon/EndScene.unity

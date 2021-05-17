@@ -25,7 +25,7 @@ public class Pitcher : MonoBehaviour
     float pitchTime = 2.0f;
 
     float nowTime;
-    float gameTime = 80.0f;
+    public static float gameTime = 80.0f;
 
     int count;
 
