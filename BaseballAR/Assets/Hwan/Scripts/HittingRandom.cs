@@ -7,7 +7,6 @@ public class HittingRandom : MonoBehaviour
     public GameObject hitBalls;
     public GameObject hitPos;
 
-    
     public static float xHitPower;
     public float yHitPower;
     public float zHitPower;
@@ -25,7 +24,7 @@ public class HittingRandom : MonoBehaviour
         {
             SetHitPower();
             ArrowBonusScore.instance.SetArrowScore();
-           
+            ComboBonusScore.hitCnt++;
         }
     }
 
@@ -39,16 +38,17 @@ public class HittingRandom : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Shoot();
-        yield return new WaitForSeconds(0.7f);
+
+        yield return new WaitForSeconds(0.1f);
         bc.enabled = false;
         DefaultHitPower();
     }
 
     void SetHitPower()
     {
-        xHitPower = Random.Range(-300f, 300f);
-        yHitPower = Random.Range(150f, 250f);
-        zHitPower = Random.Range(200f, 400f);
+        xHitPower = Random.Range(-200f, 200f);
+        yHitPower = Random.Range(200f, 250f);
+        zHitPower = Random.Range(200f, 250f);
     }
 
     void DefaultHitPower()
