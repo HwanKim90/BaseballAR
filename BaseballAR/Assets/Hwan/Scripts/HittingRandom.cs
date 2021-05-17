@@ -24,7 +24,7 @@ public class HittingRandom : MonoBehaviour
         {
             SetHitPower();
             ArrowBonusScore.instance.SetArrowScore();
-           
+            ComboBonusScore.hitCnt++;
         }
     }
 
@@ -38,7 +38,8 @@ public class HittingRandom : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Shoot();
-        yield return new WaitForSeconds(0.7f);
+
+        yield return new WaitForSeconds(0.1f);
         bc.enabled = false;
         DefaultHitPower();
     }

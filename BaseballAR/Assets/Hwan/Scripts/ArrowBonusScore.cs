@@ -5,12 +5,11 @@ using UnityEngine;
 public class ArrowBonusScore : MonoBehaviour
 {
     public static ArrowBonusScore instance;
+    public GameObject[] arrows;
+    public static bool isCorrect;
 
     int bonusScore = 100;
-    public GameObject[] arrows;
-
     int randomNum;
-    public static bool isCorrect;
 
     void Awake()
     {
@@ -45,7 +44,6 @@ public class ArrowBonusScore : MonoBehaviour
             if (i == randomNum)
             {
                 arrows[i].SetActive(true);
-                
             }
             else
             {
