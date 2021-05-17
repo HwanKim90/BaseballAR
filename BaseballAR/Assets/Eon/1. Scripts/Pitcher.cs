@@ -18,7 +18,7 @@ public class Pitcher : MonoBehaviour
     public GameObject ballFactory;
     public GameObject[] pitchingMachine;
     public GameObject strikeZone;
-
+    
     bool isPitching;
 
     float currTime;
@@ -59,8 +59,7 @@ public class Pitcher : MonoBehaviour
         if(nowTime > 40.0f)
         {
             Time.timeScale = scaleOfTime + (nowTime / 80.0f);
-        }
-        
+        }  
         
     }
 
@@ -102,7 +101,7 @@ public class Pitcher : MonoBehaviour
     void Throw()
     {
         count = Random.Range(0, 3);
-
+        
         if(isPitching == true)
         {
             if (count == 0)
