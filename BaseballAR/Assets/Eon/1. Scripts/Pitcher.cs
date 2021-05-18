@@ -22,7 +22,7 @@ public class Pitcher : MonoBehaviour
     bool isPitching;
 
     float currTime;
-    float pitchTime = 2.0f;
+    public static float pitchTime = 2.1f;
 
     float nowTime;
     public static float gameTime = 80.0f;
@@ -32,18 +32,20 @@ public class Pitcher : MonoBehaviour
     public float scaleOfTime = 1f;
 
     private Transform myTransform;
+    Vector3 myPos;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         myTransform = transform;
+        myPos = transform.position;
     }
 
     void Update()
     {
         nowTime += Time.deltaTime;
 
-        if(nowTime > 20 && nowTime < gameTime)
+        if (nowTime > 20 && nowTime < gameTime)
         {
             switch (state)
             {
@@ -55,12 +57,6 @@ public class Pitcher : MonoBehaviour
                     break;
             }
         }
-
-        if(nowTime > 40.0f)
-        {
-            Time.timeScale = scaleOfTime + (nowTime / gameTime);
-        }  
-        
     }
 
     void Idle()
@@ -83,17 +79,18 @@ public class Pitcher : MonoBehaviour
         Invoke("Throw", 0.9f);
 
         currTime += Time.deltaTime;
+
         if (currTime > pitchTime)
         {
             state = PitcherState.Idle;
             anim.SetTrigger("Idle");
-            //ScoreManager.instance.AddScore(10);
             currTime = 0;
         }
     }
 
     void PitcherRot()
     {
+        transform.position = myPos;
         transform.rotation = Quaternion.Euler(0, 270, 0);
     }
 

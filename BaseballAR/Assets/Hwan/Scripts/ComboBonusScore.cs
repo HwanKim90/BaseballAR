@@ -13,21 +13,27 @@ public class ComboBonusScore : MonoBehaviour
     public static int throwCnt;
     int comboCnt;
     int comboScore = 50;
+    float time;
 
     void Awake()
     {
         instance = this;
     }
 
+    void Update()
+    {
+        time = Timer.slTime.value;
+    }
+
     public void CompareCnt()
     {
-        if (hitCnt == throwCnt && CheckCombo.firstBallInStrkieZone)
+        if (hitCnt == throwCnt && CheckCombo.firstBallInStrkieZone && time > 0)
         {
             comboCnt++;
             comboTextUI.gameObject.SetActive(true);
             SetComboBonusScore();
             print(comboCnt);
-            comboTextUI.text = comboCnt + "Combo !";
+            comboTextUI.text = comboCnt + "COMBO !";
         }
         else
         {
@@ -35,7 +41,8 @@ public class ComboBonusScore : MonoBehaviour
             comboCnt = 0;
             hitCnt = 0;
             throwCnt = 0;
-            print("miss");
+            comboTextUI.text = "MISS!";
+            Pitcher.pitchTime = 2.1f;
         }
     }
 
@@ -47,6 +54,7 @@ public class ComboBonusScore : MonoBehaviour
             slTime.value += 5f;
             Pitcher.gameTime += 5f;
             //print("3√  ¡ı∞°");
+            Pitcher.pitchTime -= 0.1f;
         }
 
         if (comboCnt == 7)
@@ -54,6 +62,7 @@ public class ComboBonusScore : MonoBehaviour
             ScoreManager.instance.AddScore(comboScore * 2);
             slTime.value += 10f;
             Pitcher.gameTime += 10f;
+            Pitcher.pitchTime -= 0.2f;
         }
 
         if (comboCnt == 10)
@@ -61,6 +70,7 @@ public class ComboBonusScore : MonoBehaviour
             ScoreManager.instance.AddScore(comboScore * 3);
             slTime.value += 15f;
             Pitcher.gameTime += 15f;
+            Pitcher.pitchTime -= 0.3f;
         }
 
         if (comboCnt == 15)
@@ -68,6 +78,7 @@ public class ComboBonusScore : MonoBehaviour
             ScoreManager.instance.AddScore(comboScore * 4);
             slTime.value += 15f;
             Pitcher.gameTime += 15f;
+            Pitcher.pitchTime -= 0.4f;
         }
     }
 }

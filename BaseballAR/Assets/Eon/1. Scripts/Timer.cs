@@ -12,7 +12,6 @@ public class Timer : MonoBehaviour
         slTime = GetComponent<Slider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Invoke("CountTime", 20);

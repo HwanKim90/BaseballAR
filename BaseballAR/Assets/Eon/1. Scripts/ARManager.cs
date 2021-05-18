@@ -75,13 +75,10 @@ public class ARManager : MonoBehaviour
 
                 countDown.SetActive(true);
 
-                //zone.SetActive(true);
-                //zone.transform.position = indicator.transform.position - new Vector3(0, -0.1f, 1.8f);
-                //zone.transform.rotation = indicator.transform.rotation;
-
+                field.SetActive(false);
                 ui.SetActive(true);
                 indicator.SetActive(false);
-                //Invoke("CountDown", 20);
+
                 enabled = false;
             }
         }

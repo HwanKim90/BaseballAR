@@ -339,7 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   firingAngle: 0
-  gravity: 1
+  gravity: 1.2
   Projectile: {fileID: 2207061097096284318}
 --- !u!54 &6698697167713530863
 Rigidbody:

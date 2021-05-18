@@ -13,7 +13,17 @@ public class CountDownManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(ReadyToPlay());
-      //  StartCoroutine(MoveToEndingScene());
+    }
+
+    void Update()
+    {
+        float time = Timer.slTime.value;
+
+        if(time == 0)
+        {
+            Invoke("MoveToEndingScene", 5.0f);
+        }
+
     }
 
     IEnumerator ReadyToPlay()
@@ -40,15 +50,14 @@ public class CountDownManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         countDownText.gameObject.SetActive(false);
     }
-    /*
-    IEnumerator MoveToEndingScene()
+    
+    void MoveToEndingScene()
     {
-        yield return WaitForSeconds(80);
-        countDownText.gameObject.SetActive(true);
-        countDownText.text = "END";
-        endingBtn.gameObject.SetActive(true);
+            countDownText.gameObject.SetActive(true);
+            countDownText.text = "END";
+            endingBtn.gameObject.SetActive(true);
     }
-    */
+    
     public void OnClickEnding()
     {
         SceneManager.LoadScene("EndScene");
