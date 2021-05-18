@@ -48,7 +48,7 @@ public class HittingRandom : MonoBehaviour
 
     void SetHitPower()
     {
-        xHitPower = Random.Range(-2f, 2f);
+        xHitPower = Random.Range(-3f, 3f);
         yHitPower = Random.Range(2f, 2.5f);
         zHitPower = Random.Range(2f, 2.5f);
     }
