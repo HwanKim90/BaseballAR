@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CountDownManager : MonoBehaviour
 {
     public Text countDownText;
 
+    public Button endingBtn;
+
     void Start()
     {
         StartCoroutine(ReadyToPlay());
-    }
-
-    void Update()
-    {
-        
+      //  StartCoroutine(MoveToEndingScene());
     }
 
     IEnumerator ReadyToPlay()
     {
+        endingBtn.gameObject.SetActive(false);
         countDownText.text = "정확한 타이밍에 공을 맞추세요!";
         yield return new WaitForSeconds(3);
         countDownText.text = "1분 동안 가장 높은 점수를 기록해보세요!";
@@ -36,8 +36,21 @@ public class CountDownManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         countDownText.text = "" + 1;
         yield return new WaitForSeconds(1);
-        countDownText.text = "Start!";
+        countDownText.text = "START!";
         yield return new WaitForSeconds(1);
         countDownText.gameObject.SetActive(false);
+    }
+    /*
+    IEnumerator MoveToEndingScene()
+    {
+        yield return WaitForSeconds(80);
+        countDownText.gameObject.SetActive(true);
+        countDownText.text = "END";
+        endingBtn.gameObject.SetActive(true);
+    }
+    */
+    public void OnClickEnding()
+    {
+        SceneManager.LoadScene("EndScene");
     }
 }

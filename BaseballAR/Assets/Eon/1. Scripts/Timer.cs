@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    Slider slTime;
+    public static Slider slTime;
 
     void Start()
     {

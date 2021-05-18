@@ -81,7 +81,7 @@ public class ARManager : MonoBehaviour
 
                 ui.SetActive(true);
                 indicator.SetActive(false);
-                Invoke("CountDown", 20);
+                //Invoke("CountDown", 20);
                 enabled = false;
             }
         }

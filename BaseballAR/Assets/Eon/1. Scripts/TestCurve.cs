@@ -6,7 +6,7 @@ public class TestCurve : MonoBehaviour
 {
     public GameObject Target;
     public float firingAngle;
-    public float gravity = 9.8f;
+    public float gravity = 1.0f;
 
     public Transform Projectile;
     private Transform myTransform;
@@ -26,8 +26,8 @@ public class TestCurve : MonoBehaviour
 
         Target = GameObject.Find("Target/TargetTest" + targetNum);
 
-        firingAngle = Random.Range(15.0f, 30.0f);
-        isTarget = Target.transform.position;
+        firingAngle = Random.Range(10.0f, 35.0f);
+        isTarget = Target.transform.position + new Vector3(0, 0, 0.012f);
         StartCoroutine(SimulateProjectile());
     }
 
@@ -43,7 +43,7 @@ public class TestCurve : MonoBehaviour
         float Vx = Mathf.Sqrt(projectile_Velocity) * Mathf.Cos(firingAngle * Mathf.Deg2Rad);
         float Vy = Mathf.Sqrt(projectile_Velocity) * Mathf.Sin(firingAngle * Mathf.Deg2Rad);
 
-        float flightDuration = target_Distance / Vx;
+        float flightDuration = target_Distance * 4;
 
         Projectile.rotation = Quaternion.LookRotation(isTarget - Projectile.position);
 

@@ -18,6 +18,6 @@ public class CurveBall : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, Target.transform.position, 0.1f);
+        transform.position = Vector3.Lerp(transform.position, Target.transform.position, 0.07f);
     }
 }

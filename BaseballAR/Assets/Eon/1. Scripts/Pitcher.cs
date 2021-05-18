@@ -58,7 +58,7 @@ public class Pitcher : MonoBehaviour
 
         if(nowTime > 40.0f)
         {
-            Time.timeScale = scaleOfTime + (nowTime / 80.0f);
+            Time.timeScale = scaleOfTime + (nowTime / gameTime);
         }  
         
     }

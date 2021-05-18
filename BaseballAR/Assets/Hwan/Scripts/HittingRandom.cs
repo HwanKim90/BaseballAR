@@ -23,6 +23,8 @@ public class HittingRandom : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             SetHitPower();
+            AudioSource audio = gameObject.GetComponent<AudioSource>();
+            audio.Play();
             ArrowBonusScore.instance.SetArrowScore();
             ComboBonusScore.hitCnt++;
         }
@@ -60,10 +62,9 @@ public class HittingRandom : MonoBehaviour
 
     void Shoot()
     {
-        AudioSource audio = gameObject.GetComponent<AudioSource>();
+        
         GameObject hitBall = Instantiate(hitBalls);
         //ScoreManager.instance.AddScore(10);
-        audio.Play();
         hitBall.transform.SetPositionAndRotation(hitPos.transform.position, hitPos.transform.rotation);
         Rigidbody rb = hitBall.GetComponent<Rigidbody>();
         rb.AddRelativeForce(xHitPower, yHitPower, zHitPower, ForceMode.Force);
