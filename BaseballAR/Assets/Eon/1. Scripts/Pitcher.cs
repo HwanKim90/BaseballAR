@@ -79,11 +79,10 @@ public class Pitcher : MonoBehaviour
     }
 
     void Pitch()
-    {
+    {   
         Invoke("Throw", 0.9f);
 
         currTime += Time.deltaTime;
-
         if (currTime > pitchTime)
         {
             state = PitcherState.Idle;
@@ -119,10 +118,10 @@ public class Pitcher : MonoBehaviour
                 GameObject ball = Instantiate(pitchingMachine[2]);
                 ball.transform.position = ballFactory.transform.position;
             }
-            //strikeZone.SetActive(false);
             StrikeZone.isPitching = true;
-
+            
             isPitching = false;
         }
+        
     }
 }

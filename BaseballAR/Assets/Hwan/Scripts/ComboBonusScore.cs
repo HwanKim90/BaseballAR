@@ -49,16 +49,23 @@ public class ComboBonusScore : MonoBehaviour
             //print("3√  ¡ı∞°");
         }
 
-        if (comboCnt == 6)
+        if (comboCnt == 7)
         {
-            ScoreManager.instance.AddScore(comboScore);
+            ScoreManager.instance.AddScore(comboScore * 2);
             slTime.value += 10f;
             Pitcher.gameTime += 10f;
         }
 
-        if (comboCnt == 9)
+        if (comboCnt == 10)
         {
-            ScoreManager.instance.AddScore(comboScore);
+            ScoreManager.instance.AddScore(comboScore * 3);
+            slTime.value += 15f;
+            Pitcher.gameTime += 15f;
+        }
+
+        if (comboCnt == 15)
+        {
+            ScoreManager.instance.AddScore(comboScore * 4);
             slTime.value += 15f;
             Pitcher.gameTime += 15f;
         }

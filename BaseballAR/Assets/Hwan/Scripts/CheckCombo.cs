@@ -12,6 +12,10 @@ public class CheckCombo : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             firstBallInStrkieZone = true;
+            StrikeZone.isPitching = false;
+            print("ºÎµúÈû!" + StrikeZone.isPitching);
+            
+            print(StrikeZone.dissolve);
             StartCoroutine(DelayCompareCnt());
         }
     }
@@ -20,8 +24,6 @@ public class CheckCombo : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         ComboBonusScore.instance.CompareCnt();
-        StrikeZone.isPitching = false;
-        StrikeZone.dissolve = 0;
     }
 }
 
