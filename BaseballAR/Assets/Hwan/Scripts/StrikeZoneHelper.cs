@@ -23,14 +23,12 @@ public class StrikeZoneHelper : MonoBehaviour
             Hitting.stayTime = 0;
             //strikeZone.SetActive(true);
             
-
             other.GetComponentInChildren<Text>().text = ballCnt.ToString();
 
             if (isStrike == false) other.GetComponent<MeshRenderer>().material = green;
             Destroy(other.gameObject, 2f);
 
             ComboBonusScore.throwCnt++; 
-
         }
     }
 }

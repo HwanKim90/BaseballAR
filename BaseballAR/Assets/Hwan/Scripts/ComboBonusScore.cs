@@ -44,20 +44,30 @@ public class ComboBonusScore : MonoBehaviour
         if (comboCnt == 3)
         {
             ScoreManager.instance.AddScore(comboScore);
-            slTime.value += 3f;
+            slTime.value += 5f;
+            Pitcher.gameTime += 5f;
             //print("3√  ¡ı∞°");
         }
 
-        if (comboCnt == 6)
+        if (comboCnt == 7)
         {
-            ScoreManager.instance.AddScore(comboScore);
-            slTime.value += 6f;
+            ScoreManager.instance.AddScore(comboScore * 2);
+            slTime.value += 10f;
+            Pitcher.gameTime += 10f;
         }
 
-        if (comboCnt == 9)
+        if (comboCnt == 10)
         {
-            ScoreManager.instance.AddScore(comboScore);
-            slTime.value += 9f;
+            ScoreManager.instance.AddScore(comboScore * 3);
+            slTime.value += 15f;
+            Pitcher.gameTime += 15f;
+        }
+
+        if (comboCnt == 15)
+        {
+            ScoreManager.instance.AddScore(comboScore * 4);
+            slTime.value += 15f;
+            Pitcher.gameTime += 15f;
         }
     }
 }

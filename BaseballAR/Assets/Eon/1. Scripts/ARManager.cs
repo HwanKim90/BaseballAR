@@ -70,7 +70,7 @@ public class ARManager : MonoBehaviour
             if(indicator.activeSelf == true)
             {
                 stadium.SetActive(true);
-                stadium.transform.position = indicator.transform.position;
+                stadium.transform.position = indicator.transform.position + new Vector3(0, 0, -0.3f);
                 stadium.transform.rotation = indicator.transform.rotation;
 
                 countDown.SetActive(true);

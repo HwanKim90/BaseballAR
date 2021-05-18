@@ -6,16 +6,18 @@ public class HittingRandom : MonoBehaviour
 {   
     public GameObject hitBalls;
     public GameObject hitPos;
-
+    
     public static float xHitPower;
     public float yHitPower;
     public float zHitPower;
+
 
     BoxCollider bc;
 
     void Start()
     {
         bc = GetComponent<BoxCollider>();
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +25,8 @@ public class HittingRandom : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             SetHitPower();
+            AudioSource audio = gameObject.GetComponent<AudioSource>();
+            audio.Play();
             ArrowBonusScore.instance.SetArrowScore();
             ComboBonusScore.hitCnt++;
         }
@@ -46,9 +50,9 @@ public class HittingRandom : MonoBehaviour
 
     void SetHitPower()
     {
-        xHitPower = Random.Range(-200f, 200f);
-        yHitPower = Random.Range(200f, 250f);
-        zHitPower = Random.Range(200f, 250f);
+        xHitPower = Random.Range(-2f, 2f);
+        yHitPower = Random.Range(2f, 3f);
+        zHitPower = Random.Range(1f, 1.5f);
     }
 
     void DefaultHitPower()
@@ -59,14 +63,12 @@ public class HittingRandom : MonoBehaviour
     }
 
     void Shoot()
-    {
-        AudioSource audio = gameObject.GetComponent<AudioSource>();
+    {   
         GameObject hitBall = Instantiate(hitBalls);
         //ScoreManager.instance.AddScore(10);
-        audio.Play();
         hitBall.transform.SetPositionAndRotation(hitPos.transform.position, hitPos.transform.rotation);
         Rigidbody rb = hitBall.GetComponent<Rigidbody>();
-        rb.AddRelativeForce(xHitPower, yHitPower, zHitPower, ForceMode.Force);
+        rb.AddRelativeForce(xHitPower, yHitPower, zHitPower, ForceMode.VelocityChange);
         
         if (xHitPower == 0 && yHitPower == 0 && zHitPower == 0) Destroy(hitBall);
         

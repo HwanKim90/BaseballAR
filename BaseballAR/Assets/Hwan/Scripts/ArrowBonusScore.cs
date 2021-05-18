@@ -60,17 +60,17 @@ public class ArrowBonusScore : MonoBehaviour
     public void SetArrowScore()
     {
         
-        if (HittingRandom.xHitPower >= -300 && HittingRandom.xHitPower <= -100 && randomNum == 0)
+        if (HittingRandom.xHitPower >= -90 && HittingRandom.xHitPower <= -30 && randomNum == 0)
         {
             Setting();
         }
 
-        if (HittingRandom.xHitPower > -100 && HittingRandom.xHitPower <= 100 && randomNum == 1)
+        if (HittingRandom.xHitPower > -30 && HittingRandom.xHitPower <= 30 && randomNum == 1)
         {
             Setting();
         }
 
-        if (HittingRandom.xHitPower > 100 && HittingRandom.xHitPower <= 300 && randomNum == 2)
+        if (HittingRandom.xHitPower > 30 && HittingRandom.xHitPower <= 90 && randomNum == 2)
         {
             Setting();
         }

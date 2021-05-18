@@ -21,6 +21,7 @@ public class StrikeZone : MonoBehaviour
     {
         dissolveMat = GetComponent<MeshRenderer>().material;
         dissolveName = dissolveMat.shader.GetPropertyName(3);
+        
     }
 
     private void Update()
@@ -29,9 +30,11 @@ public class StrikeZone : MonoBehaviour
         {
             print("피칭");
             SetShaderPropertyValue();
+        }   
+        else
+        {
+            SetShaderPropertyValue();
         }
-        
-            
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,8 +49,9 @@ public class StrikeZone : MonoBehaviour
     // 시간에 따라 움직이게 어케하냐 아.. 업데이트에서 해야되는데
     public void SetShaderPropertyValue()
     {
-        if (dissolve < 1 && isPitching) dissolve += 0.031f;
-        //if (dissolve > 0 && !isPitching) dissolve -= 0.05f;
+        dissolve = Mathf.Clamp(dissolve, 0.05f, 1f);
+        if (isPitching) dissolve += 0.03f;
+        if (!isPitching) dissolve -= 0.05f;
 
         dissolveMat.SetFloat(dissolveName, dissolve);
     }
