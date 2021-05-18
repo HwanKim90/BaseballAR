@@ -20,7 +20,7 @@ public class EndManager : MonoBehaviour
 
     void Start()
     {
-        
+        SetData();
     }
 
     // Update is called once per frame
@@ -72,5 +72,10 @@ public class EndManager : MonoBehaviour
     void activeScore()
     {
         textScore.gameObject.SetActive(true);
+    }
+
+    void SetData()
+    {
+        textScore.text = "" + GameManager.saveScore;
     }
 }

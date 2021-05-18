@@ -67,8 +67,8 @@ public class StartManager : MonoBehaviour
 
     public void OnClickStart()
     {
-        //SceneManager.LoadScene("Eon_ALPHA");
-        SceneManager.LoadScene("KH_ALPHA");
+        SceneManager.LoadScene("Eon_ALPHA");
+        //SceneManager.LoadScene("KH_ALPHA");
     }
 
     public void OnClickExit()
