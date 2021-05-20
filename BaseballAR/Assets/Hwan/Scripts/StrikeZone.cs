@@ -46,7 +46,7 @@ public class StrikeZone : MonoBehaviour
         }
     }
 
-    // 시간에 따라 움직이게 어케하냐 아.. 업데이트에서 해야되는데
+    
     public void SetShaderPropertyValue()
     {
         dissolve = Mathf.Clamp(dissolve, 0.05f, 1f);

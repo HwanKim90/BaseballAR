@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ElectroEft
+  m_Shader: {fileID: -6465566751694194690, guid: 8618e4c72cd1d734cbaea16f0a7d164d, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_8bb937d119ce4e7096f39a5d55ba20dd: 0.5
+    - Vector1_9209ec7c0bd943f8999b03b06740a4c7: 20
+    - Vector1_e0cc341501194504bace6e29a9910a92: 2
+    m_Colors:
+    - Color_67f083a7cacd46a9ac2eae0631b377ae: {r: 2.670157, g: 2.5609243, b: 0, a: 1}
+    - Vector2_18f528a0f18d464c9044a5bdb4cdc097: {r: 0, g: 0.5, b: 0, a: 0}
+    - Vector2_c8dcf1610fc6427db6f52d36969db8df: {r: 0.1, g: 0.5, b: 0, a: 0}
+  m_BuildTextureStacks: []
