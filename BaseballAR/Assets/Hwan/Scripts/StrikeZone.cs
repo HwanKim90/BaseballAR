@@ -28,7 +28,7 @@ public class StrikeZone : MonoBehaviour
     {
         if (isPitching)
         {
-            print("ÇÇÄª");
+            //print("ÇÇÄª");
             SetShaderPropertyValue();
         }   
         else

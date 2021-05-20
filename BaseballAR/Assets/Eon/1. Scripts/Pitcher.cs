@@ -26,13 +26,14 @@ public class Pitcher : MonoBehaviour
 
     float nowTime;
     public static float gameTime = 80.0f;
-
+    public AudioClip clip;
     int count;
 
     public float scaleOfTime = 1f;
 
     private Transform myTransform;
     Vector3 myPos;
+
 
     void Start()
     {
@@ -61,12 +62,16 @@ public class Pitcher : MonoBehaviour
 
     void Idle()
     {
+        AudioSource audio = GetComponent<AudioSource>();
+
         PitcherRot();
 
         currTime += Time.deltaTime;
 
         if(currTime > pitchTime)
         {
+            audio.PlayOneShot(clip);
+            audio.PlayDelayed(0.9f);
             state = PitcherState.Pitch;
             anim.SetTrigger("Pitch");
             currTime = 0;
