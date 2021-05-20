@@ -6,12 +6,14 @@ public class HittingRandom : MonoBehaviour
 {   
     public GameObject hitBalls;
     public GameObject hitPos;
+    public GameObject hitEftFactory;
 
     public static float xHitPower;
     public float yHitPower;
     public float zHitPower;
 
     BoxCollider bc;
+    bool isSettingPower;
 
     void Start()
     {
@@ -41,7 +43,7 @@ public class HittingRandom : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Shoot();
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         bc.enabled = false;
         DefaultHitPower();
     }
@@ -51,6 +53,7 @@ public class HittingRandom : MonoBehaviour
         xHitPower = Random.Range(-3f, 3f);
         yHitPower = Random.Range(2f, 2.5f);
         zHitPower = Random.Range(2f, 2.5f);
+        isSettingPower = true;
     }
 
     void DefaultHitPower()
@@ -58,6 +61,7 @@ public class HittingRandom : MonoBehaviour
         xHitPower = 0;
         yHitPower = 0;
         zHitPower = 0;
+        isSettingPower = false;
     }
 
     void Shoot()
@@ -70,7 +74,15 @@ public class HittingRandom : MonoBehaviour
         rb.AddRelativeForce(xHitPower, yHitPower, zHitPower, ForceMode.VelocityChange);
         
         if (xHitPower == 0 && yHitPower == 0 && zHitPower == 0) Destroy(hitBall);
-        
+        if (isSettingPower) HitEft();
+
+    }
+
+    void HitEft()
+    {
+        GameObject hitEft = Instantiate(hitEftFactory);
+        hitEft.transform.SetPositionAndRotation(hitPos.transform.position, hitPos.transform.rotation);
+        Destroy(hitEft, 0.5f);
     }
 }
 

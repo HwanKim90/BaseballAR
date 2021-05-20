@@ -27,7 +27,7 @@ public class ComboBonusScore : MonoBehaviour
             comboTextUI.gameObject.SetActive(true);
             SetComboBonusScore();
             print(comboCnt);
-            comboTextUI.text = comboCnt + "Combo !";
+            comboTextUI.text = comboCnt + " Combo !";
         }
         else
         {

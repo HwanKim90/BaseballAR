@@ -6,6 +6,7 @@ public class ArrowBonusScore : MonoBehaviour
 {
     public static ArrowBonusScore instance;
     public GameObject[] arrows;
+    public GameObject[] exploPaticles;
     public static bool isCorrect;
 
     int bonusScore = 100;
@@ -60,28 +61,37 @@ public class ArrowBonusScore : MonoBehaviour
     public void SetArrowScore()
     {
         
-        if (HittingRandom.xHitPower >= -90 && HittingRandom.xHitPower <= -30 && randomNum == 0)
+        if (HittingRandom.xHitPower >= -3 && HittingRandom.xHitPower <= -1 && randomNum == 0)
         {
             Setting();
         }
 
-        if (HittingRandom.xHitPower > -30 && HittingRandom.xHitPower <= 30 && randomNum == 1)
+        if (HittingRandom.xHitPower > -1 && HittingRandom.xHitPower <= 1 && randomNum == 1)
         {
             Setting();
         }
 
-        if (HittingRandom.xHitPower > 30 && HittingRandom.xHitPower <= 90 && randomNum == 2)
+        if (HittingRandom.xHitPower > 1 && HittingRandom.xHitPower <= 3 && randomNum == 2)
         {
             Setting();
         }
     }       
 
-   void Setting()
+    void Setting()
     {
         arrows[randomNum].SetActive(false);
+        ExploParticleSetting();
+
         ScoreManager.instance.AddScore(bonusScore);
         randomNum = Random.Range(0, 3);
         isCorrect = true;
+    }
+
+    void ExploParticleSetting()
+    {
+        GameObject explo = Instantiate(exploPaticles[randomNum]);
+        explo.transform.SetPositionAndRotation(arrows[randomNum].transform.position, arrows[randomNum].transform.rotation);
+        Destroy(explo, 2f);
     }
 }
 

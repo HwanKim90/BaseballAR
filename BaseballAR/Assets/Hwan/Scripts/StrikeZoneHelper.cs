@@ -26,7 +26,7 @@ public class StrikeZoneHelper : MonoBehaviour
             other.GetComponentInChildren<Text>().text = ballCnt.ToString();
 
             if (isStrike == false) other.GetComponent<MeshRenderer>().material = green;
-            Destroy(other.gameObject, 2f);
+            Destroy(other.gameObject, 1f);
 
             ComboBonusScore.throwCnt++; 
         }

@@ -63,6 +63,7 @@ public class ARManager : MonoBehaviour
         else
         {
             indicator.SetActive(false);
+            
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -81,6 +82,7 @@ public class ARManager : MonoBehaviour
 
                 ui.SetActive(true);
                 indicator.SetActive(false);
+                field.SetActive(false);
                 //Invoke("CountDown", 20);
                 enabled = false;
             }
