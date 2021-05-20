@@ -52,12 +52,12 @@ public class EndManager : MonoBehaviour
 
     public void OnClickStart()
     {
-        SceneManager.LoadScene("Eon_ALPHA");
+        SceneManager.LoadScene("KH_BETHA2");
     }
 
     public void OnClickRetry()
     {
-        SceneManager.LoadScene("Eon_ALPHA");
+        SceneManager.LoadScene("KH_BETHA2");
     }
 
     public void OnClickExit()
